@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
 	<title>Product Page</title>
 	<style>
@@ -7,14 +7,28 @@
 			font-family: Arial, sans-serif;
 			margin: 0;
 			padding: 0;
+            background-color: #202020;
+            color: white;
 		}
 		
+        header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+header img {
+  max-height: 50px;
+}  
+
 		.container {
 			max-width: 1200px;
 			margin: 0 auto;
 			padding: 20px;
 			display: flex;
 			justify-content: space-between;
+            margin-top: 3%;
 		}
 		
 		.product-image {
@@ -52,18 +66,106 @@
 			border: none;
 			cursor: pointer;
 			font-size: 1rem;
+            text-decoration: none;
+            border-radius: 5px;
 		}
 		
 		.cart-btn:hover {
 			background-color: #3e8e41;
+            text-decoration: none;
+            border-radius: 5px;
 		}
 
-        section{
-            margin-left: 200px;
+      
+
+        .rating {
+  background-color: rgba(0, 0, 0, 0.292);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 1000px;
+  max-width: 80%;
+  margin-left: 160px;
+}
+        .rating-title{
+            font-size: 2rem;
+			margin-bottom: 10px;
+            margin-left: 165px;
         }
+
+
+        #openFormButton {
+  background-color: #4caf50;
+  color: white;
+}
+
+#openFormButton:hover,
+#openFormButton:focus {
+  background-color: #45a049;
+}
+
+#issueForm {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.292);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 980px;
+  max-width: 80%;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button[type="button"] {
+  background-color: #007bff;
+  color: white;
+}
+
+button[type="button"]:hover,
+button[type="button"]:focus {
+  background-color: #0056b3;
+}
+
+button {
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.new-r{
+    margin-left: 165px;
+}
 	</style>
 </head>
 <body>
+    <header>
+        <a href="https://enricozon.mom"
+          ><img
+            src="https://enricozon.mom/immagini/loghi/enricozonbt.png"
+        /></a>
+      </header>
+  
 	<div class="container">
 		<div class="product-image">
 			<img src="product-image.jpg" alt="Product Image">
@@ -73,22 +175,96 @@
 			<h1 class="product-title">Product Title</h1>
 			<p class="product-price">$99.99</p>
 			<p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut dui nisi. Donec bibendum scelerisque ante vitae facilisis.</p>
-			<button class="cart-btn">Add to Cart</button>
+			<button class="cart-btn">Buy</button>
 		</div>
 	</div>
-    <section class="reviews">
-        <div class="review-container">
-          <h3>Review 1</h3>
-          <p>This is a great product!</p>
-          <h4>- John Doe</h4>
+<div class="new-r">   
+    <h2>Scrivi una recensione</h2>
+        <button id="openFormButton" onclick="toggleForm()">
+          Nuova Recensione
+        </button>
+
+        <form id="issueForm">
+          <label for="name">Nome:</label>
+          <input type="text" id="name" required /><br />
+
+          <label for="score">Punteggio (0/10):</label>
+          <input type="number" id="score" min="0" max="10" required /><br />
+
+          <label for="review">Recensione:</label>
+          <textarea id="review" rows="4" required></textarea><br />
+
+          <button type="button" onclick="createGitHubIssue()">
+            Invia Recensione
+          </button>
+        </form>
         </div>
-        <div class="review-container">
-          <h3>Review 2</h3>
-          <p>I highly recommend this product.</p>
-          <h4>- Jane Smith</h4>
-        </div>
-        <!-- Add more review containers as needed -->
-      </section>
+    <h1 class="rating-title">Product Title</h1>
+        <div class="rating">
+            <p>AleCostaFanPage: (10/10)</p>
+            <p>IL MIO PREFERITOwdeubidwenbcdwfkhurfdjudbkbghggdffdhdrhghjdfghdfghhhfhgfdgghgggggfhhdjhfhfggghgfgfhgfhfhgh</p>
+          </div>
+    <br>
 </body>
+<script>
+    function toggleForm() {
+      var form = document.getElementById("issueForm");
+      form.style.display = form.style.display === "none" ? "block" : "none";
+    }
+
+    // Base64 decode function
+    function base64Decode(str) {
+      return atob(str);
+    }
+
+    // Function to create a GitHub issue with encoded Authorization token
+    function createGitHubIssue() {
+      const name = document.getElementById("name").value;
+      const score = document.getElementById("score").value;
+      const review = document.getElementById("review").value;
+
+      // Encoded token
+      const encodedToken =
+        "Z2hwX0xBOUN4ZWxqQUNiRmVYR2dvakhOc1FhTVZOS0xlTzNKYkdMSQo=";
+
+      // Decode the token
+      const decodedToken = base64Decode(encodedToken);
+
+      const issueData = {
+        title: "Recensione Costa",
+        body: `Nome: ${name}\nPunteggio: ${score}/10\nRecensione: ${review}`,
+      };
+
+      fetch(
+        "https://api.github.com/repos/Enricozon-Team/enricozon2.0/issues",
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${decodedToken}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(issueData),
+        }
+      )
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`Error: ${response.statusText}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log("Nuova Recensione Mandata", data);
+          alert(
+            "Recensione inviata con successo! Possono volerci fino a 24 ore prima che venga aggiunta."
+          );
+        })
+        .catch((error) => {
+          console.error("Error creating issue:", error.message);
+          alert(
+            "Errore nell'inviare la recensione! Se l'errore persiste, contattate l'assistenza a support@enricozon.mom"
+          );
+        });
+    }
+  </script>
 </html>
 
