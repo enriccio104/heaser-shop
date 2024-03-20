@@ -152,3 +152,43 @@ transition: background-color 0.3s ease;
 margin-left: 165px;
 }
 
+/* Stili per dispositivi mobili */
+@media only screen and (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .product-image {
+        margin-right: 0;
+        width: 100%;
+        text-align: center; /* Centra il contenuto */
+    }
+
+
+    .product-info {
+      margin-right: -1%;
+      width: 100%;
+      text-align: left; /* Centra il contenuto */
+    }
+  
+    .rating{
+        margin-left: 5%;
+        word-wrap: break-word;
+      text-align: left /* Centra il contenuto */
+    }
+
+
+    .rating-title,
+    .new-r {
+      margin-left: 5%;
+      width: 100%;
+      max-width: 100%;
+      text-align: left /* Centra il contenuto */
+    }
+  
+    .new-r {
+      margin-top: 20px;
+    }
+  }
+  
