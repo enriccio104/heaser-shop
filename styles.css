@@ -104,13 +104,13 @@ button:hover {
     #products {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 1em;
+        gap: 2em;
         width: 100%;
     }
 
     .product {
-        width: 100%;
-        margin: 0;
+        width: 85%;
+        margin: 0 auto;
     }
 
     button {
