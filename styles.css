@@ -105,7 +105,7 @@ button:hover {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 2em;
-        width: 100%;
+        width: auto;
     }
 
     .product {
