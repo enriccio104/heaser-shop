@@ -101,9 +101,16 @@ button:hover {
 }
 
 @media (max-width: 480px) {
+    #products {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+        width: 100%;
+    }
+
     .product {
-        width: 90%;
-        margin: 1em auto;
+        width: 100%;
+        margin: 0;
     }
 
     button {
@@ -114,6 +121,9 @@ button:hover {
     main {
         padding: 0.5em;
     }
+
+    #cart {
+        width: 100%;
+        margin: 1em auto;
+    }
 }
-
-
