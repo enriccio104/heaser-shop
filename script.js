@@ -20,3 +20,5 @@ function updateCart() {
 
     totalPriceElement.textContent = `Totale: €${totalPrice.toFixed(2)}`;
 }
+
+

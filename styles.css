@@ -6,10 +6,24 @@ body {
 }
 
 header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
+    background-color: #fff;
+    color: #000;
     padding: 1em 0;
+    display: flex;
+    align-items: center;
+    
+}
+
+header .logo {
+    margin-right: 10px;
+    height: 100px;
+    margin-left: 100px;
+}
+
+h1 {
+    font-family: serif;
+    font-size: 43px; 
+    color: #000;
 }
 
 main {
@@ -88,6 +102,7 @@ button:hover {
     margin-top: 1em;
 }
 
+
 /* Media Queries */
 @media (max-width: 768px) {
     #products {
@@ -126,5 +141,32 @@ button:hover {
     #cart {
         width: 100%;
         margin: 1em auto;
+    }
+
+
+
+    header {
+        background-color: #fff;
+        color: #000;
+        align-items: center;
+        text-align: center;
+        padding: 0em 0;
+        display:block;
+    }
+    
+    header .logo {
+        margin-left: 0; /* Margine a sinistra */
+        margin-top: -25px;
+        height: 150px;
+        width: auto;
+    }
+    
+    h1 {
+        font-family: serif;
+        font-size: 32px; 
+        color: #000;
+    }
+    header .textlogo {
+        margin-top: -50px;
     }
 }
