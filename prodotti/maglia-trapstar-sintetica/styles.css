@@ -5,20 +5,16 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f4f4f4;
+    background-color: white;
 }
 
-.product-container {
-    display: flex;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
 
 .image-gallery {
+    margin-top: -100px;
+    margin-left: -100px;
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
     overflow: hidden;
 }
 
@@ -26,6 +22,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 10px;
 }
 
 .prev, .next {
@@ -69,19 +66,25 @@ body {
 }
 
 .buy-button {
+    display: inline-block;
     padding: 10px 20px;
-    background-color: #286ea7;
-    color: white;
-    border: none;
-    cursor: pointer;
     font-size: 16px;
-    text-transform: uppercase;
-}
-
-.buy-button:hover {
-    background-color: #213088;
-}
-
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #4CAF50; /* Colore del bordo */
+    color: #4CAF50; /* Colore del testo */
+    background-color: transparent; /* Colore di sfondo trasparente */
+    border-radius: 5px; /* Bordo arrotondato */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transizioni animate */
+  }
+  
+  /* Stile del bottone al passaggio del mouse */
+  .buy-button:hover {
+    background-color: #4CAF50; /* Colore di sfondo al passaggio */
+    color: #fff; /* Colore del testo al passaggio */
+  }
 @media (max-width: 480px) {
 
 }
